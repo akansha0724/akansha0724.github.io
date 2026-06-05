@@ -11,16 +11,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #fafafa;
-      --surface:  #ffffff;
-      --border:   #e8e8e8;
-      --text:     #1a1a1a;
-      --muted:    #666;
-      --accent:   #2563eb;
-      --accent-light: #eff6ff;
-      --tag-bg:   #f1f5f9;
-      --radius:   10px;
-      --shadow:   0 1px 4px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.04);
+      --bg:          #fff0f5;
+      --surface:     #ffffff;
+      --border:      #f9c0d4;
+      --text:        #2d1a22;
+      --muted:       #8a5a6a;
+      --accent:      #d63384;
+      --accent-light:#fce4ec;
+      --tag-bg:      #fdf0f5;
+      --radius:      10px;
+      --shadow:      0 1px 4px rgba(214,51,132,.07), 0 4px 16px rgba(214,51,132,.05);
     }
 
     html { scroll-behavior: smooth; }
@@ -64,6 +64,11 @@
     #hero {
       padding: 6rem 0 5rem;
       display: flex; align-items: center; gap: 3rem;
+      background: linear-gradient(135deg, #ffe0ee 0%, #fff0f5 60%, #fce4ec 100%);
+      margin: 0 -1.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      border-radius: 0 0 24px 24px;
     }
     .hero-text { flex: 1; }
     .hero-tag {
@@ -94,8 +99,16 @@
     .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: var(--surface); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── QUOTE ── */
+    .quote {
+      font-size: 1.15rem; font-style: italic; font-weight: 500;
+      color: var(--accent); border-left: 3px solid var(--accent);
+      padding: .75rem 1.25rem; margin-bottom: 2rem;
+      background: var(--accent-light); border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
     /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
     .about-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.5rem;
@@ -103,9 +116,84 @@
     }
     .about-card h3 { font-size: .85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
     .about-card p { color: var(--text); font-size: .95rem; line-height: 1.7; }
-    .about-card ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
-    .about-card ul li { font-size: .9rem; color: var(--text); display: flex; align-items: center; gap: .5rem; }
-    .about-card ul li::before { content: "→"; color: var(--accent); font-weight: 600; }
+    .about-card ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    .about-card ul li {
+      font-size: .88rem; color: var(--text); line-height: 1.55;
+      padding-left: 1.1rem; position: relative;
+    }
+    .about-card ul li::before {
+      content: "→"; color: var(--accent); font-weight: 600;
+      position: absolute; left: 0; top: 0;
+    }
+
+    /* ── ABOUT EDITORIAL ── */
+    .about-editorial {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem;
+      margin-bottom: 2.5rem; align-items: start;
+    }
+    .about-lead {
+      font-size: 1.08rem; font-weight: 500; line-height: 1.75;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .about-body {
+      font-size: .95rem; line-height: 1.75; color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .about-vienna {
+      font-size: .92rem; font-style: italic; color: var(--accent);
+      font-weight: 500; padding-left: .75rem;
+      border-left: 2px solid var(--accent);
+    }
+    .about-right { display: flex; flex-direction: column; gap: 0; }
+    .fact-row {
+      display: grid; grid-template-columns: 90px 1fr;
+      gap: .5rem; padding: .65rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .fact-row:first-child { border-top: 1px solid var(--border); }
+    .fact-label { font-size: .75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .fact-val { font-size: .88rem; color: var(--text); line-height: 1.5; }
+
+    /* ── WINS STRIP ── */
+    .wins-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    }
+    .win {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.1rem;
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-size: .88rem; line-height: 1.5;
+      box-shadow: var(--shadow);
+    }
+    .win-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: .35rem;
+    }
+    .win span { color: var(--text); }
+    .win em { display: block; font-style: normal; color: var(--muted); font-size: .8rem; margin-top: .15rem; }
+
+    @media (max-width: 640px) {
+      .about-editorial { grid-template-columns: 1fr; gap: 1.5rem; }
+      .wins-strip { grid-template-columns: 1fr; }
+    }
+
+    /* ── EXPERIENCE TIMELINE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .exp-item { padding-left: 1rem; border-left: 2px solid var(--border); }
+    .exp-item:hover { border-left-color: var(--accent); }
+    .exp-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; margin-bottom: .25rem; }
+    .exp-role { font-weight: 600; font-size: .92rem; color: var(--text); }
+    .exp-place { font-size: .82rem; color: var(--muted); }
+    .exp-item p { font-size: .87rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── BADGE GRID ── */
+    .badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .badge-item {
+      display: flex; align-items: flex-start; gap: .5rem;
+      font-size: .88rem; line-height: 1.5;
+    }
+    .badge-item span { color: var(--text); }
 
     /* ── SKILLS ── */
     .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
@@ -207,7 +295,7 @@
       <h1>Hi, I'm <span>Akansha Singh</span></h1>
       <p>
         Aspiring Data Analyst with a background in Biotechnology — I turn messy data
-        into clear business decisions across finance, healthcare, and consulting.
+        into clear business decisions across finance, healthcare, and consulting analytics.
       </p>
       <div class="hero-btns">
         <a class="btn btn-primary" href="#projects">View Projects</a>
@@ -222,45 +310,60 @@
 <div class="container">
   <section id="about">
     <h2>About <span>Me</span></h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>Background</h3>
-        <p>
-          B.Tech Biotechnology student with a strong focus on data science and ML.
-          My domain knowledge in life sciences gives me an edge in healthcare analytics,
-          while my technical skills apply equally to financial and consulting contexts.
-          I incorporate GenAI tools into my analytical workflows — both for faster iteration
-          and for building smarter, insight-driven products.
+
+    <div class="about-editorial">
+
+      <div class="about-intro">
+        <p class="about-lead">
+          I'm a Biotechnology student at Amity University, Noida who believes
+          the best way to learn something is to start before you feel ready.
+          That's how I ended up interning at IIT, competing at national hackathons,
+          and spending two years in a research lab.
         </p>
+        <p class="about-body">
+          Data analysis is where that instinct meets a real skill — I'm drawn to the moment
+          when numbers stop being numbers and start telling you something true about a patient,
+          a business, or a decision that needs to be made. I'm working towards roles in
+          finance, healthcare, and consulting analytics.
+        </p>
+        <p class="about-vienna">Vienna waits for you — so there's time to build something worth arriving at.</p>
       </div>
-      <div class="about-card">
-        <h3>What I'm Looking For</h3>
-        <ul>
-          <li>Data Analyst roles in finance or healthcare</li>
-          <li>Analytics consulting at strategy firms</li>
-          <li>Teams that use data to drive real decisions</li>
-          <li>Environments where I can keep learning</li>
-        </ul>
+
+      <div class="about-right">
+        <div class="fact-row">
+          <span class="fact-label">Education</span>
+          <span class="fact-val">B.Tech Biotechnology · Amity University · CGPA 8.49</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Currently</span>
+          <span class="fact-val">Research Intern · IIT (ISM) Dhanbad · SRIS 2026</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Also</span>
+          <span class="fact-val">Data Analyst Intern · Bluestock™</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Research</span>
+          <span class="fact-val">Systems Biology & Data Analytics Lab · Amity Institute of Biotechnology · 2+ years</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Training</span>
+          <span class="fact-val">CSIR-CIMFR · Isolation & characterisation of air pollution tolerant microbes from coal mining areas · Python analysis</span>
+        </div>
+        <div class="fact-row">
+          <span class="fact-label">Leadership</span>
+          <span class="fact-val">Joint Secretary · Innovation & Entrepreneurship Cell, AIB</span>
+        </div>
       </div>
-      <div class="about-card">
-        <h3>What I Bring</h3>
-        <ul>
-          <li>End-to-end ML pipelines, not just notebooks</li>
-          <li>Business framing — I ask "so what?" first</li>
-          <li>Life sciences domain knowledge</li>
-          <li>Clear communication of complex results</li>
-        </ul>
-      </div>
-      <div class="about-card">
-        <h3>Currently Exploring</h3>
-        <ul>
-          <li>Advanced SQL for analytics</li>
-          <li>Financial data analysis</li>
-          <li>GenAI-powered reporting workflows</li>
-          <li>Healthcare operations analytics</li>
-        </ul>
-      </div>
+
     </div>
+
+    <div class="wins-strip">
+      <div class="win"><span class="win-dot"></span><span>Finalist · Riverathon 1.0 <em>Ministry of Jal Shakti, NMCG & World Bank</em></span></div>
+      <div class="win"><span class="win-dot"></span><span>Semi-finalist · IIT Delhi Handloom Hackathon <em>300+ teams · Ministry of Textiles</em></span></div>
+      <div class="win"><span class="win-dot"></span><span>10th 95.2% · 12th 93.4% <em>Delhi Public School</em></span></div>
+    </div>
+
   </section>
 </div>
 
@@ -279,7 +382,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <h3>Data & ML</h3>
+        <h3>Data & Analytics</h3>
         <div class="tags">
           <span class="tag">Pandas</span>
           <span class="tag">NumPy</span>
@@ -306,7 +409,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <h3>ML Techniques</h3>
+        <h3>Methods</h3>
         <div class="tags">
           <span class="tag">Classification</span>
           <span class="tag">Anomaly Detection</span>
@@ -320,7 +423,7 @@
           <span class="tag">Bioinformatics</span>
           <span class="tag">Computer Vision</span>
           <span class="tag">EDA</span>
-          <span class="tag">GenAI</span>
+          <span class="tag">Data Storytelling</span>
         </div>
       </div>
     </div>
