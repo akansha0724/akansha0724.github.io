@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe0ee"/>
+      <stop offset="100%" style="stop-color:#fce4ec"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#d63384"/>
+
+  <!-- Pink circle decoration -->
+  <circle cx="1050" cy="100" r="180" fill="#f9c0d4" opacity="0.3"/>
+  <circle cx="150" cy="530" r="120" fill="#f9c0d4" opacity="0.2"/>
+
+  <!-- Name -->
+  <text x="100" y="260" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="#2d1a22">Akansha Singh</text>
+
+  <!-- Title -->
+  <text x="100" y="340" font-family="Arial, sans-serif" font-size="36" fill="#d63384" font-weight="600">Aspiring Data Analyst</text>
+
+  <!-- Divider -->
+  <rect x="100" y="375" width="80" height="3" fill="#d63384"/>
+
+  <!-- Tagline -->
+  <text x="100" y="430" font-family="Arial, sans-serif" font-size="26" fill="#8a5a6a">Finance · Healthcare · Consulting Analytics</text>
+
+  <!-- URL -->
+  <text x="100" y="530" font-family="Arial, sans-serif" font-size="22" fill="#d63384" opacity="0.8">akansha0724.github.io</text>
+</svg>
