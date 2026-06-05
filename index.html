@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akansha Singh — Data Analyst</title>
+  <meta name="description" content="Data Analyst portfolio — finance, healthcare, and consulting analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #fafafa;
+      --surface:  #ffffff;
+      --border:   #e8e8e8;
+      --text:     #1a1a1a;
+      --muted:    #666;
+      --accent:   #2563eb;
+      --accent-light: #eff6ff;
+      --tag-bg:   #f1f5f9;
+      --radius:   10px;
+      --shadow:   0 1px 4px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-name { font-weight: 600; font-size: 1rem; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+    section { padding: 5rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.5rem; font-weight: 700;
+      margin-bottom: 2rem; color: var(--text);
+    }
+    h2 span { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 6rem 0 5rem;
+      display: flex; align-items: center; gap: 3rem;
+    }
+    .hero-text { flex: 1; }
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent-light); color: var(--accent);
+      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; padding: .3rem .75rem;
+      border-radius: 99px; margin-bottom: 1rem;
+    }
+    .hero-text h1 {
+      font-size: 2.6rem; font-weight: 700; line-height: 1.2;
+      margin-bottom: .75rem;
+    }
+    .hero-text h1 span { color: var(--accent); }
+    .hero-text p {
+      color: var(--muted); font-size: 1.05rem;
+      max-width: 520px; margin-bottom: 1.75rem; line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .6rem 1.2rem; border-radius: var(--radius);
+      font-size: .9rem; font-weight: 500; text-decoration: none;
+      transition: all .2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: var(--surface); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .about-card h3 { font-size: .85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
+    .about-card p { color: var(--text); font-size: .95rem; line-height: 1.7; }
+    .about-card ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .about-card ul li { font-size: .9rem; color: var(--text); display: flex; align-items: center; gap: .5rem; }
+    .about-card ul li::before { content: "→"; color: var(--accent); font-weight: 600; }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .skill-group {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .skill-group h3 { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag {
+      background: var(--tag-bg); color: var(--text);
+      font-size: .78rem; font-weight: 500;
+      padding: .25rem .6rem; border-radius: 6px;
+    }
+    .tag.accent { background: var(--accent-light); color: var(--accent); }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; gap: 1.25rem; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.75rem;
+      box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: .5rem; align-items: start;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .project-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(37,99,235,.1); }
+    .project-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
+    .project-emoji { font-size: 1.4rem; }
+    .project-card h3 { font-size: 1.05rem; font-weight: 600; }
+    .project-card .problem { font-size: .88rem; color: var(--muted); margin-bottom: .75rem; line-height: 1.6; }
+    .project-result {
+      display: inline-flex; align-items: center; gap: .35rem;
+      background: #f0fdf4; color: #16a34a;
+      font-size: .8rem; font-weight: 600;
+      padding: .25rem .65rem; border-radius: 6px;
+      margin-bottom: .75rem;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+    .project-link {
+      display: inline-flex; align-items: center; gap: .3rem;
+      font-size: .85rem; font-weight: 500; color: var(--accent);
+      text-decoration: none;
+    }
+    .project-link:hover { text-decoration: underline; }
+    .project-card .featured-badge {
+      background: var(--accent); color: #fff;
+      font-size: .72rem; font-weight: 600; letter-spacing: .05em;
+      text-transform: uppercase; padding: .2rem .6rem;
+      border-radius: 6px; white-space: nowrap;
+    }
+
+    /* ── CONTACT ── */
+    .contact-inner {
+      text-align: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 3rem 2rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-inner p { color: var(--muted); max-width: 480px; margin: .75rem auto 2rem; font-size: 1rem; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center; padding: 2rem;
+      color: var(--muted); font-size: .85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      #hero { flex-direction: column; padding: 3rem 0; }
+      .hero-text h1 { font-size: 2rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .project-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-name" href="#hero">Akansha Singh</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="container">
+  <section id="hero">
+    <div class="hero-text">
+      <span class="hero-tag">Open to Opportunities</span>
+      <h1>Hi, I'm <span>Akansha Singh</span></h1>
+      <p>
+        Aspiring Data Analyst with a background in Biotechnology — I turn messy data
+        into clear business decisions across finance, healthcare, and consulting.
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/akansha-singh0724" target="_blank">LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/akansha0724" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div class="container">
+  <section id="about">
+    <h2>About <span>Me</span></h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Background</h3>
+        <p>
+          B.Tech Biotechnology student with a strong focus on data science and ML.
+          My domain knowledge in life sciences gives me an edge in healthcare analytics,
+          while my technical skills apply equally to financial and consulting contexts.
+          I incorporate GenAI tools into my analytical workflows — both for faster iteration
+          and for building smarter, insight-driven products.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>What I'm Looking For</h3>
+        <ul>
+          <li>Data Analyst roles in finance or healthcare</li>
+          <li>Analytics consulting at strategy firms</li>
+          <li>Teams that use data to drive real decisions</li>
+          <li>Environments where I can keep learning</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>What I Bring</h3>
+        <ul>
+          <li>End-to-end ML pipelines, not just notebooks</li>
+          <li>Business framing — I ask "so what?" first</li>
+          <li>Life sciences domain knowledge</li>
+          <li>Clear communication of complex results</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h3>Currently Exploring</h3>
+        <ul>
+          <li>Advanced SQL for analytics</li>
+          <li>Financial data analysis</li>
+          <li>GenAI-powered reporting workflows</li>
+          <li>Healthcare operations analytics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SKILLS -->
+<div class="container">
+  <section id="skills">
+    <h2>Tech <span>Stack</span></h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <div class="tags">
+          <span class="tag accent">Python</span>
+          <span class="tag accent">SQL</span>
+          <span class="tag">Git</span>
+          <span class="tag">Excel</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Data & ML</h3>
+        <div class="tags">
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">SHAP</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Seaborn</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Deployment</h3>
+        <div class="tags">
+          <span class="tag">Flask</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">OpenCV</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Analytics Focus</h3>
+        <div class="tags">
+          <span class="tag accent">Healthcare Analytics</span>
+          <span class="tag accent">Financial Analytics</span>
+          <span class="tag accent">Consulting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>ML Techniques</h3>
+        <div class="tags">
+          <span class="tag">Classification</span>
+          <span class="tag">Anomaly Detection</span>
+          <span class="tag">Feature Engineering</span>
+          <span class="tag">Cross-Validation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Domains</h3>
+        <div class="tags">
+          <span class="tag">Bioinformatics</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">EDA</span>
+          <span class="tag">GenAI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PROJECTS -->
+<div class="container">
+  <section id="projects">
+    <h2>Featured <span>Projects</span></h2>
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div>
+          <div class="project-header">
+            <span class="project-emoji">🍄</span>
+            <h3>Fungal Pathogenicity Predictor</h3>
+          </div>
+          <p class="problem">
+            Classify fungal disease risk across 9 pathogen types from ecological trait data —
+            directly applicable to pharma R&D, agricultural risk assessment, and life sciences analytics.
+          </p>
+          <div class="project-result">✦ 92.2% Accuracy · 0.683 Macro F1 · 9 classes</div>
+          <div class="project-tags">
+            <span class="tag">Gradient Boosting</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">sklearn Pipeline</span>
+            <span class="tag">5-Fold CV</span>
+            <span class="tag">Class Imbalance</span>
+          </div>
+          <a class="project-link" href="https://github.com/akansha0724/Fungal-Pathogenicity-Predictor" target="_blank">
+            View on GitHub →
+          </a>
+        </div>
+        <span class="featured-badge">Featured</span>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div>
+          <div class="project-header">
+            <span class="project-emoji">🏠</span>
+            <h3>Smart Home Intrusion Detector</h3>
+          </div>
+          <p class="problem">
+            Real-time anomaly detection system for IoT networks — flags abnormal device behaviour
+            without labelled attack data. The same methodology applies to financial fraud detection
+            and healthcare network monitoring.
+          </p>
+          <div class="project-result">✦ Unsupervised · SHAP Explainability · Live Dashboard</div>
+          <div class="project-tags">
+            <span class="tag">Isolation Forest</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">Anomaly Detection</span>
+            <span class="tag">CI/CD</span>
+          </div>
+          <a class="project-link" href="https://github.com/akansha0724/SmartHomeIntrusionDetector" target="_blank">
+            View on GitHub →
+          </a>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div>
+          <div class="project-header">
+            <span class="project-emoji">📊</span>
+            <h3>Student Performance Predictor</h3>
+          </div>
+          <p class="problem">
+            ML-powered Flask dashboard that predicts academic outcomes and generates SSI (Student
+            Success Index) scores with personalised improvement recommendations — same pattern as
+            patient risk scoring and customer churn analytics.
+          </p>
+          <div class="project-result">✦ End-to-End · Flask Dashboard · Actionable Insights</div>
+          <div class="project-tags">
+            <span class="tag">Flask</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Prediction</span>
+            <span class="tag">Recommendations</span>
+          </div>
+          <a class="project-link" href="https://github.com/akansha0724/Student-Performance-Predictor" target="_blank">
+            View on GitHub →
+          </a>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <div>
+          <div class="project-header">
+            <span class="project-emoji">🎨</span>
+            <h3>Real-Time Skin Tone Analyser</h3>
+          </div>
+          <p class="problem">
+            Computer vision personalisation engine that detects skin tone from a live webcam feed
+            and generates tailored colour recommendations in real time using OpenCV and colour theory.
+          </p>
+          <div class="project-result">✦ Real-time · 30 FPS · 5 Tone Categories</div>
+          <div class="project-tags">
+            <span class="tag">OpenCV</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Real-time</span>
+            <span class="tag">Personalisation</span>
+          </div>
+          <a class="project-link" href="https://github.com/akansha0724/Skintone-Analysis" target="_blank">
+            View on GitHub →
+          </a>
+        </div>
+        <div></div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="container">
+  <section id="contact">
+    <h2>Get In <span>Touch</span></h2>
+    <div class="contact-inner">
+      <h3 style="font-size:1.3rem; font-weight:700;">Open to data analyst roles</h3>
+      <p>
+        Finance, healthcare, or consulting — if you're working on something data-driven
+        and need someone who can bridge domain knowledge with analytical rigour, let's talk.
+      </p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:akansha0724@gmail.com">akansha0724@gmail.com</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/akansha-singh0724" target="_blank">LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/akansha0724" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>Built by Akansha Singh · <a href="https://github.com/akansha0724" style="color:var(--accent)">github.com/akansha0724</a></p>
+</footer>
+
+</body>
+</html>
