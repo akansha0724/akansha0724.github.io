@@ -4,654 +4,574 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akansha Singh — Data Analyst</title>
-  <meta name="description" content="Data Analyst portfolio — finance, healthcare, and consulting analytics." />
+  <meta name="description" content="Data analyst working across finance, healthcare, and consulting — turning 770K+ rows of real-world data into decisions. 10 shipped projects, from warehouses to risk models to RAG." />
   <meta property="og:title" content="Akansha Singh — Data Analyst" />
-  <meta property="og:description" content="Aspiring data analyst. Here's what I've built so far — and where I'm headed." />
+  <meta property="og:description" content="Finance · healthcare · consulting analytics. 10 shipped projects — warehouses, risk models, forecasting, and a RAG assistant." />
   <meta property="og:image" content="https://akansha0724.github.io/thumbnail.png" />
   <meta property="og:url" content="https://akansha0724.github.io" />
   <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#d6336c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add('js');</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #fff0f5;
+      --bg:          #fff8fb;
+      --bg-warm:     #fef0f5;
       --surface:     #ffffff;
-      --border:      #f9c0d4;
-      --text:        #2d1a22;
-      --muted:       #8a5a6a;
-      --accent:      #d63384;
-      --accent-light:#fce4ec;
-      --tag-bg:      #fdf0f5;
-      --radius:      10px;
-      --shadow:      0 1px 4px rgba(214,51,132,.07), 0 4px 16px rgba(214,51,132,.05);
+      --line:        #f6d1de;
+      --line-soft:   #fbe3ec;
+      --ink:         #2b1a22;
+      --muted:       #8a5f6e;
+      --faint:       #b98ea0;
+      --accent:      #d6336c;
+      --accent-deep: #a61e4d;
+      --accent-soft: #ffe1ec;
+      --gold:        #c07b16;
+      --radius:      14px;
+      --radius-sm:   8px;
+      --shadow-sm:   0 1px 3px rgba(166,30,77,.06), 0 6px 18px rgba(166,30,77,.05);
+      --shadow-lg:   0 8px 40px rgba(166,30,77,.12);
+      --maxw:        1000px;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15.5px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .mono { font-family: 'Space Mono', monospace; }
+    .serif { font-family: 'Fraunces', serif; }
+
+    .kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: .74rem; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700;
     }
 
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
+      background: rgba(255,248,251,.82);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line-soft);
     }
-    .nav-name { font-weight: 600; font-size: 1rem; color: var(--text); text-decoration: none; }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .nav-inner {
+      max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem;
+      height: 60px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.12rem; text-decoration: none; letter-spacing: -.01em; }
+    .nav-name span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.7rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 500; transition: color .2s; }
     .nav-links a:hover { color: var(--accent); }
-
-    /* ── LAYOUT ── */
-    .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
-
-    section { padding: 5rem 0; }
-    section + section { border-top: 1px solid var(--border); }
-
-    h2 {
-      font-size: 1.5rem; font-weight: 700;
-      margin-bottom: 2rem; color: var(--text);
-    }
-    h2 span { color: var(--accent); }
-
-    /* ── HERO ── */
-    #hero {
-      padding: 6rem 0 5rem;
-      display: flex; align-items: center; gap: 3rem;
-      background: linear-gradient(135deg, #ffe0ee 0%, #fff0f5 60%, #fce4ec 100%);
-      margin: 0 -1.5rem;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      border-radius: 0 0 24px 24px;
-    }
-    .hero-text { flex: 1; }
-    .hero-tag {
-      display: inline-block;
-      background: var(--accent-light); color: var(--accent);
-      font-size: .78rem; font-weight: 600; letter-spacing: .06em;
-      text-transform: uppercase; padding: .3rem .75rem;
-      border-radius: 99px; margin-bottom: 1rem;
-    }
-    .hero-text h1 {
-      font-size: 2.6rem; font-weight: 700; line-height: 1.2;
-      margin-bottom: .75rem;
-    }
-    .hero-text h1 span { color: var(--accent); }
-    .hero-text p {
-      color: var(--muted); font-size: 1.05rem;
-      max-width: 520px; margin-bottom: 1.75rem; line-height: 1.7;
-    }
-    .hero-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .4rem;
-      padding: .6rem 1.2rem; border-radius: var(--radius);
-      font-size: .9rem; font-weight: 500; text-decoration: none;
+    .nav-cta {
+      border: 1.5px solid var(--accent); color: var(--accent) !important;
+      padding: .38rem .9rem; border-radius: 99px; font-size: .82rem !important;
       transition: all .2s;
     }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: #1d4ed8; }
-    .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: var(--surface); }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-cta:hover { background: var(--accent); color: #fff !important; }
+    @media (max-width: 620px) { .nav-links li:not(.nav-cta-li) { display: none; } }
 
-    /* ── QUOTE ── */
-    .quote {
-      font-size: 1.15rem; font-style: italic; font-weight: 500;
-      color: var(--accent); border-left: 3px solid var(--accent);
-      padding: .75rem 1.25rem; margin-bottom: 2rem;
-      background: var(--accent-light); border-radius: 0 var(--radius) var(--radius) 0;
+    /* ── LAYOUT ── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5.5rem 0; }
+    .section-head { margin-bottom: 2.6rem; }
+    .section-head h2 {
+      font-family: 'Fraunces', serif; font-weight: 600;
+      font-size: 2rem; letter-spacing: -.02em; margin-top: .35rem; line-height: 1.15;
+    }
+    .section-head h2 em { font-style: italic; color: var(--accent); }
+    .section-head p { color: var(--muted); margin-top: .6rem; max-width: 560px; font-size: .98rem; }
+
+    /* ── HERO ── */
+    #hero { position: relative; padding: 5.5rem 0 4.5rem; overflow: hidden; }
+    .hero-blob {
+      position: absolute; border-radius: 50%; filter: blur(60px);
+      opacity: .55; z-index: 0; pointer-events: none;
+    }
+    .blob-1 { width: 460px; height: 460px; background: #ffc7de; top: -160px; right: -120px; animation: drift 16s ease-in-out infinite; }
+    .blob-2 { width: 380px; height: 380px; background: #ffe0b8; bottom: -180px; left: -140px; animation: drift 20s ease-in-out infinite reverse; }
+    @keyframes drift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(24px,30px) scale(1.08); } }
+
+    .hero-grid {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1.35fr .95fr; gap: 3rem; align-items: center;
+    }
+    .status {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--surface); border: 1px solid var(--line);
+      padding: .32rem .8rem; border-radius: 99px; font-size: .8rem; font-weight: 500;
+      color: var(--muted); box-shadow: var(--shadow-sm); margin-bottom: 1.4rem;
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; position: relative; }
+    .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; background: #22c55e; opacity: .4; animation: pulse 1.8s ease-out infinite; }
+    @keyframes pulse { 0% { transform: scale(.7); opacity: .5; } 100% { transform: scale(2.4); opacity: 0; } }
+
+    .hero-grid h1 {
+      font-family: 'Fraunces', serif; font-weight: 600;
+      font-size: clamp(2.4rem, 5.2vw, 3.5rem); line-height: 1.08;
+      letter-spacing: -.025em; margin-bottom: 1.1rem;
+    }
+    .hero-grid h1 .accent { color: var(--accent); font-style: italic; }
+    .hero-lead { color: var(--muted); font-size: 1.08rem; line-height: 1.7; max-width: 480px; margin-bottom: 1.9rem; }
+    .hero-btns { display: flex; gap: .7rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .45rem;
+      padding: .68rem 1.3rem; border-radius: var(--radius-sm);
+      font-size: .9rem; font-weight: 600; text-decoration: none; transition: all .2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(214,51,132,.28); }
+    .btn-primary:hover { background: var(--accent-deep); transform: translateY(-1px); }
+    .btn-ghost { border: 1.5px solid var(--line); color: var(--ink); background: var(--surface); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* hero data snippet */
+    .snippet {
+      background: #2b1a22; border-radius: var(--radius);
+      box-shadow: var(--shadow-lg); overflow: hidden; font-family: 'Space Mono', monospace;
+    }
+    .snippet-bar { display: flex; gap: .4rem; padding: .7rem .9rem; background: #3a2530; }
+    .snippet-bar i { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+    .snippet-body { padding: 1.1rem 1.2rem 1.3rem; font-size: .82rem; line-height: 1.9; color: #f6d7e3; }
+    .snippet-body .cmd { color: #ffa8cc; }
+    .snippet-body .k { color: #ffd9a8; }
+    .snippet-body .v { color: #fff; font-weight: 700; }
+    .snippet-body .c { color: #9c7d89; }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+      .snippet { max-width: 420px; }
+    }
+
+    /* ── STAT BAND ── */
+    .stat-band {
+      background: var(--ink); color: #fff; border-radius: 20px;
+      padding: 2.2rem 1.5rem; display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1rem; box-shadow: var(--shadow-lg);
+    }
+    .stat { text-align: center; position: relative; }
+    .stat + .stat::before { content: ""; position: absolute; left: 0; top: 15%; height: 70%; width: 1px; background: rgba(255,255,255,.12); }
+    .stat .num { font-family: 'Fraunces', serif; font-size: 2.3rem; font-weight: 600; line-height: 1; color: #ffb3d1; }
+    .stat .lbl { font-size: .78rem; color: #d9bcc7; margin-top: .5rem; font-weight: 500; letter-spacing: .01em; }
+    @media (max-width: 640px) {
+      .stat-band { grid-template-columns: 1fr 1fr; gap: 1.6rem 1rem; padding: 1.8rem 1rem; }
+      .stat:nth-child(3)::before, .stat + .stat::before { display: none; }
     }
 
     /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .about-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .about-card h3 { font-size: .85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
-    .about-card p { color: var(--text); font-size: .95rem; line-height: 1.7; }
-    .about-card ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
-    .about-card ul li {
-      font-size: .88rem; color: var(--text); line-height: 1.55;
-      padding-left: 1.1rem; position: relative;
-    }
-    .about-card ul li::before {
-      content: "→"; color: var(--accent); font-weight: 600;
-      position: absolute; left: 0; top: 0;
-    }
-
-    /* ── ABOUT EDITORIAL ── */
-    .about-editorial {
-      display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem;
-      margin-bottom: 2.5rem; align-items: start;
-    }
-    .about-lead {
-      font-size: 1.08rem; font-weight: 500; line-height: 1.75;
-      color: var(--text); margin-bottom: 1rem;
-    }
-    .about-body {
-      font-size: .95rem; line-height: 1.75; color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
+    .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3.2rem; align-items: start; }
+    .about-lead { font-family: 'Fraunces', serif; font-size: 1.35rem; line-height: 1.5; font-weight: 400; letter-spacing: -.01em; margin-bottom: 1.1rem; }
+    .about-body { color: var(--muted); font-size: .98rem; line-height: 1.75; margin-bottom: 1.4rem; }
     .about-vienna {
-      font-size: .92rem; font-style: italic; color: var(--accent);
-      font-weight: 500; padding-left: .75rem;
-      border-left: 2px solid var(--accent);
+      font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem;
+      color: var(--accent); padding-left: 1rem; border-left: 3px solid var(--accent); line-height: 1.5;
     }
-    .about-right { display: flex; flex-direction: column; gap: 0; }
-    .fact-row {
-      display: grid; grid-template-columns: 90px 1fr;
-      gap: .5rem; padding: .65rem 0;
-      border-bottom: 1px solid var(--border);
-      align-items: baseline;
+    .facts { display: flex; flex-direction: column; }
+    .fact {
+      display: grid; grid-template-columns: 96px 1fr; gap: .8rem; padding: .8rem 0;
+      border-bottom: 1px solid var(--line-soft); align-items: baseline;
     }
-    .fact-row:first-child { border-top: 1px solid var(--border); }
-    .fact-label { font-size: .75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-    .fact-val { font-size: .88rem; color: var(--text); line-height: 1.5; }
-
-    /* ── WINS STRIP ── */
-    .wins-strip {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-    }
+    .fact:first-child { border-top: 1px solid var(--line-soft); }
+    .fact .fl { font-family: 'Space Mono', monospace; font-size: .7rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; }
+    .fact .fv { font-size: .88rem; color: var(--ink); line-height: 1.5; }
+    .wins { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.4rem; }
     .win {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.1rem;
-      display: flex; align-items: flex-start; gap: .6rem;
-      font-size: .88rem; line-height: 1.5;
-      box-shadow: var(--shadow);
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.1rem; font-size: .86rem; box-shadow: var(--shadow-sm); position: relative; padding-left: 2.1rem;
     }
-    .win-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0; margin-top: .35rem;
+    .win::before { content: "★"; position: absolute; left: 1rem; top: 1rem; color: var(--gold); font-size: .9rem; }
+    .win strong { display: block; font-weight: 600; margin-bottom: .1rem; }
+    .win em { font-style: normal; color: var(--muted); font-size: .78rem; }
+    @media (max-width: 780px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+      .wins { grid-template-columns: 1fr; }
     }
-    .win span { color: var(--text); }
-    .win em { display: block; font-style: normal; color: var(--muted); font-size: .8rem; margin-top: .15rem; }
-
-    @media (max-width: 640px) {
-      .about-editorial { grid-template-columns: 1fr; gap: 1.5rem; }
-      .wins-strip { grid-template-columns: 1fr; }
-    }
-
-    /* ── EXPERIENCE TIMELINE ── */
-    .exp-list { display: flex; flex-direction: column; gap: 1.1rem; }
-    .exp-item { padding-left: 1rem; border-left: 2px solid var(--border); }
-    .exp-item:hover { border-left-color: var(--accent); }
-    .exp-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; margin-bottom: .25rem; }
-    .exp-role { font-weight: 600; font-size: .92rem; color: var(--text); }
-    .exp-place { font-size: .82rem; color: var(--muted); }
-    .exp-item p { font-size: .87rem; color: var(--muted); line-height: 1.6; }
-
-    /* ── BADGE GRID ── */
-    .badge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
-    .badge-item {
-      display: flex; align-items: flex-start; gap: .5rem;
-      font-size: .88rem; line-height: 1.5;
-    }
-    .badge-item span { color: var(--text); }
 
     /* ── SKILLS ── */
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .skill-group {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.25rem;
-      box-shadow: var(--shadow);
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+    .skill-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.35rem; box-shadow: var(--shadow-sm); transition: transform .2s, box-shadow .2s;
     }
-    .skill-group h3 { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem; }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .skill-card h3 { font-family: 'Space Mono', monospace; font-size: .72rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .9rem; }
     .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .tag {
-      background: var(--tag-bg); color: var(--text);
-      font-size: .78rem; font-weight: 500;
-      padding: .25rem .6rem; border-radius: 6px;
-    }
-    .tag.accent { background: var(--accent-light); color: var(--accent); }
+    .tag { background: var(--bg-warm); color: var(--ink); font-size: .78rem; font-weight: 500; padding: .28rem .65rem; border-radius: 6px; border: 1px solid var(--line-soft); }
+    .tag.hot { background: var(--accent-soft); color: var(--accent-deep); border-color: transparent; }
+    @media (max-width: 720px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 460px) { .skills-grid { grid-template-columns: 1fr; } }
 
     /* ── PROJECTS ── */
-    .projects-grid { display: grid; gap: 1.25rem; }
-    .project-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.75rem;
-      box-shadow: var(--shadow);
-      display: grid; grid-template-columns: 1fr auto;
-      gap: .5rem; align-items: start;
-      transition: border-color .2s, box-shadow .2s;
+    .flagships { display: flex; flex-direction: column; gap: 1.3rem; margin-bottom: 3rem; }
+    .flag {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.8rem; box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--accent); transition: transform .2s, box-shadow .2s, border-color .2s;
     }
-    .project-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(37,99,235,.1); }
-    .project-header { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
-    .project-emoji { font-size: 1.4rem; }
-    .project-card h3 { font-size: 1.05rem; font-weight: 600; }
-    .project-card .problem { font-size: .88rem; color: var(--muted); margin-bottom: .75rem; line-height: 1.6; }
-    .project-result {
+    .flag:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .flag-top { display: flex; align-items: center; gap: .8rem; margin-bottom: .7rem; flex-wrap: wrap; }
+    .flag-emoji { font-size: 1.5rem; }
+    .flag h3 { font-family: 'Fraunces', serif; font-size: 1.28rem; font-weight: 600; letter-spacing: -.01em; }
+    .flag-badge { margin-left: auto; font-family: 'Space Mono', monospace; font-size: .64rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: var(--accent); padding: .24rem .6rem; border-radius: 99px; }
+    .flag p { color: var(--muted); font-size: .94rem; line-height: 1.7; margin-bottom: 1rem; max-width: 720px; }
+    .metrics { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    .metric {
+      font-family: 'Space Mono', monospace; font-size: .78rem; font-weight: 700;
+      background: #f0fbf4; color: #15803d; padding: .3rem .7rem; border-radius: 6px; border: 1px solid #cdeed7;
+    }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.1rem; }
+    .proj-tags .tag { font-size: .74rem; }
+    .flag-link, .mini-link {
       display: inline-flex; align-items: center; gap: .35rem;
-      background: #f0fdf4; color: #16a34a;
-      font-size: .8rem; font-weight: 600;
-      padding: .25rem .65rem; border-radius: 6px;
-      margin-bottom: .75rem;
+      font-size: .85rem; font-weight: 600; color: var(--accent); text-decoration: none;
     }
-    .project-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
-    .project-link {
-      display: inline-flex; align-items: center; gap: .3rem;
-      font-size: .85rem; font-weight: 500; color: var(--accent);
-      text-decoration: none;
+    .flag-link .arw, .mini-link .arw { transition: transform .2s; }
+    .flag:hover .flag-link .arw, .mini-card:hover .mini-link .arw { transform: translateX(4px); }
+
+    .more-label { font-family: 'Space Mono', monospace; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: 1.3rem; display: flex; align-items: center; gap: .8rem; }
+    .more-label::after { content: ""; flex: 1; height: 1px; background: var(--line-soft); }
+    .mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .mini-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.4rem; box-shadow: var(--shadow-sm); transition: transform .2s, box-shadow .2s, border-color .2s;
+      display: flex; flex-direction: column;
     }
-    .project-link:hover { text-decoration: underline; }
-    .project-card .featured-badge {
-      background: var(--accent); color: #fff;
-      font-size: .72rem; font-weight: 600; letter-spacing: .05em;
-      text-transform: uppercase; padding: .2rem .6rem;
-      border-radius: 6px; white-space: nowrap;
-    }
+    .mini-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+    .mini-top { display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem; }
+    .mini-top .em { font-size: 1.25rem; }
+    .mini-card h3 { font-size: 1rem; font-weight: 600; }
+    .mini-card p { color: var(--muted); font-size: .85rem; line-height: 1.6; margin-bottom: .7rem; }
+    .mini-result { font-family: 'Space Mono', monospace; font-size: .72rem; color: var(--accent-deep); margin-bottom: .8rem; }
+    .mini-card .proj-tags { margin-bottom: .9rem; }
+    .mini-card .proj-tags .tag { font-size: .7rem; padding: .2rem .5rem; }
+    .mini-card .mini-link { margin-top: auto; }
+    @media (max-width: 720px) { .mini-grid { grid-template-columns: 1fr; } .flag-badge { margin-left: 0; } }
 
     /* ── CONTACT ── */
-    .contact-inner {
-      text-align: center;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 3rem 2rem;
-      box-shadow: var(--shadow);
+    #contact .inner {
+      text-align: center; background: linear-gradient(135deg, #fff 0%, var(--bg-warm) 100%);
+      border: 1px solid var(--line); border-radius: 20px; padding: 3.5rem 2rem; box-shadow: var(--shadow-sm);
     }
-    .contact-inner p { color: var(--muted); max-width: 480px; margin: .75rem auto 2rem; font-size: 1rem; }
-    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    #contact h2 { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 600; letter-spacing: -.02em; }
+    #contact h2 em { font-style: italic; color: var(--accent); }
+    #contact p { color: var(--muted); max-width: 500px; margin: .9rem auto 2rem; font-size: 1rem; }
+    .contact-links { display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap; }
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center; padding: 2rem;
-      color: var(--muted); font-size: .85rem;
-      border-top: 1px solid var(--border);
-    }
+    footer { text-align: center; padding: 2.5rem 1.5rem; color: var(--faint); font-size: .82rem; border-top: 1px solid var(--line-soft); }
+    footer a { color: var(--accent); text-decoration: none; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      #hero { flex-direction: column; padding: 3rem 0; }
-      .hero-text h1 { font-size: 2rem; }
-      .about-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
-      .project-card { grid-template-columns: 1fr; }
+    /* ── REVEAL (progressive enhancement) ── */
+    .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1); }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .blob-1, .blob-2, .pulse::after { animation: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a class="nav-name" href="#hero">Akansha Singh</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a class="nav-name" href="#hero">Akansha<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li class="nav-cta-li"><a class="nav-cta" href="#contact">Get in touch</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="container">
-  <section id="hero">
-    <div class="hero-text">
-      <span class="hero-tag">Open to Opportunities</span>
-      <h1>Hi, I'm <span>Akansha Singh</span></h1>
-      <p>
-        Aspiring Data Analyst with a background in Biotechnology — I turn messy data
-        into clear business decisions across finance, healthcare, and consulting analytics.
-      </p>
-      <div class="hero-btns">
-        <a class="btn btn-primary" href="#projects">View Projects</a>
-        <a class="btn btn-outline" href="https://linkedin.com/in/akansha-singh0724" target="_blank">LinkedIn</a>
-        <a class="btn btn-outline" href="https://github.com/akansha0724" target="_blank">GitHub</a>
+<section id="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="status"><span class="pulse"></span> Open to data analyst roles</span>
+        <div class="kicker">Finance · Healthcare · Consulting analytics</div>
+        <h1>Hi, I'm <span class="accent">Akansha Singh</span></h1>
+        <p class="hero-lead">
+          A data analyst with a biotech mind — I turn messy, real-world data into
+          decisions people can act on. Ten shipped projects, from warehouses and
+          risk models to a RAG assistant.
+        </p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" href="#work">View my work</a>
+          <a class="btn btn-ghost" href="https://github.com/akansha0724" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/akansha-singh0724" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="snippet reveal" aria-hidden="true">
+        <div class="snippet-bar"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></div>
+        <div class="snippet-body">
+          <div><span class="cmd">&gt;&gt;&gt;</span> portfolio.summary()</div>
+          <div><span class="c"># what I've shipped</span></div>
+          <div><span class="k">projects</span>      <span class="v">10</span></div>
+          <div><span class="k">records</span>    <span class="v">770K+</span></div>
+          <div><span class="k">domains</span>       <span class="v">3</span></div>
+          <div><span class="k">status</span>   <span class="v">'ready'</span></div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- STAT BAND -->
+<div class="wrap">
+  <div class="stat-band reveal">
+    <div class="stat"><div class="num" data-count="10">10</div><div class="lbl">Projects shipped</div></div>
+    <div class="stat"><div class="num" data-count="770" data-suffix="K+">770K+</div><div class="lbl">Records analysed</div></div>
+    <div class="stat"><div class="num" data-count="3">3</div><div class="lbl">Analytics domains</div></div>
+    <div class="stat"><div class="num" data-count="2" data-suffix="+">2+</div><div class="lbl">Years in research</div></div>
+  </div>
 </div>
 
 <!-- ABOUT -->
-<div class="container">
-  <section id="about">
-    <h2>About <span>Me</span></h2>
-
-    <div class="about-editorial">
-
-      <div class="about-intro">
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">// about</span>
+      <h2>Start before you're <em>ready</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
         <p class="about-lead">
-          I'm a Biotechnology student at Amity University, Noida who believes
-          the best way to learn something is to start before you feel ready.
-          That's how I ended up interning at IIT, competing at national hackathons,
-          and spending two years in a research lab.
+          I'm a Biotechnology student at Amity University, Noida who believes the
+          best way to learn something is to start before you feel ready.
         </p>
         <p class="about-body">
-          Data analysis is where that instinct meets a real skill — I'm drawn to the moment
-          when numbers stop being numbers and start telling you something true about a patient,
-          a business, or a decision that needs to be made. I'm working towards roles in
-          finance, healthcare, and consulting analytics.
+          That's how I ended up interning at IIT, competing at national hackathons,
+          and spending two years in a research lab. Data analysis is where that
+          instinct meets a real skill — I'm drawn to the moment when numbers stop
+          being numbers and start telling you something true about a patient, a
+          business, or a decision that needs to be made. I'm working towards roles
+          in finance, healthcare, and consulting analytics.
         </p>
         <p class="about-vienna">Vienna waits for you — so there's time to build something worth arriving at.</p>
       </div>
-
-      <div class="about-right">
-        <div class="fact-row">
-          <span class="fact-label">Education</span>
-          <span class="fact-val">B.Tech Biotechnology · Amity University · CGPA 8.49</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Currently</span>
-          <span class="fact-val">Research Intern · IIT (ISM) Dhanbad · SRIS 2026</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Also</span>
-          <span class="fact-val">Data Analyst Intern · Bluestock™</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Research</span>
-          <span class="fact-val">Systems Biology & Data Analytics Lab · Amity Institute of Biotechnology · 2+ years</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Training</span>
-          <span class="fact-val">CSIR-CIMFR · Isolation & characterisation of air pollution tolerant microbes from coal mining areas · Python analysis</span>
-        </div>
-        <div class="fact-row">
-          <span class="fact-label">Leadership</span>
-          <span class="fact-val">Joint Secretary · Innovation & Entrepreneurship Cell, AIB</span>
-        </div>
+      <div class="facts reveal">
+        <div class="fact"><span class="fl">Education</span><span class="fv">B.Tech Biotechnology · Amity University · CGPA 8.49</span></div>
+        <div class="fact"><span class="fl">Currently</span><span class="fv">Research Intern · IIT (ISM) Dhanbad · SRIS 2026</span></div>
+        <div class="fact"><span class="fl">Also</span><span class="fv">Data Analyst Intern · Bluestock™</span></div>
+        <div class="fact"><span class="fl">Research</span><span class="fv">Systems Biology & Data Analytics Lab · Amity Institute of Biotechnology · 2+ years</span></div>
+        <div class="fact"><span class="fl">Training</span><span class="fv">CSIR-CIMFR · Air-pollution-tolerant microbes from coal-mining areas · Python analysis</span></div>
+        <div class="fact"><span class="fl">Leadership</span><span class="fv">Joint Secretary · Innovation & Entrepreneurship Cell, AIB</span></div>
       </div>
-
     </div>
-
-    <div class="wins-strip">
-      <div class="win"><span class="win-dot"></span><span>Finalist · Riverathon 1.0 <em>Ministry of Jal Shakti, NMCG & World Bank</em></span></div>
-      <div class="win"><span class="win-dot"></span><span>Semi-finalist · IIT Delhi Handloom Hackathon <em>300+ teams · Ministry of Textiles</em></span></div>
-      <div class="win"><span class="win-dot"></span><span>10th 95.2% · 12th 93.4% <em>Delhi Public School</em></span></div>
+    <div class="wins">
+      <div class="win reveal"><strong>Finalist · Riverathon 1.0</strong><em>Ministry of Jal Shakti, NMCG & World Bank</em></div>
+      <div class="win reveal"><strong>Semi-finalist · IIT Delhi Handloom Hackathon</strong><em>300+ teams · Ministry of Textiles</em></div>
+      <div class="win reveal"><strong>10th 95.2% · 12th 93.4%</strong><em>Delhi Public School</em></div>
     </div>
-
-  </section>
-</div>
+  </div>
+</section>
 
 <!-- SKILLS -->
-<div class="container">
-  <section id="skills">
-    <h2>Tech <span>Stack</span></h2>
+<section id="skills" style="background:var(--bg-warm);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">// toolkit</span>
+      <h2>The <em>stack</em> behind the work</h2>
+    </div>
     <div class="skills-grid">
-      <div class="skill-group">
-        <h3>Languages</h3>
-        <div class="tags">
-          <span class="tag accent">Python</span>
-          <span class="tag accent">SQL</span>
-          <span class="tag">Git</span>
-          <span class="tag">Excel</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Data & Analytics</h3>
-        <div class="tags">
-          <span class="tag">Pandas</span>
-          <span class="tag">NumPy</span>
-          <span class="tag">scikit-learn</span>
-          <span class="tag">SHAP</span>
-          <span class="tag">Matplotlib</span>
-          <span class="tag">Seaborn</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Deployment</h3>
-        <div class="tags">
-          <span class="tag">Flask</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">OpenCV</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Analytics Focus</h3>
-        <div class="tags">
-          <span class="tag accent">Healthcare Analytics</span>
-          <span class="tag accent">Financial Analytics</span>
-          <span class="tag accent">Consulting</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Methods</h3>
-        <div class="tags">
-          <span class="tag">Classification</span>
-          <span class="tag">Anomaly Detection</span>
-          <span class="tag">Feature Engineering</span>
-          <span class="tag">Cross-Validation</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3>Domains</h3>
-        <div class="tags">
-          <span class="tag">Bioinformatics</span>
-          <span class="tag">Computer Vision</span>
-          <span class="tag">EDA</span>
-          <span class="tag">Data Storytelling</span>
-        </div>
-      </div>
+      <div class="skill-card reveal"><h3>Languages</h3><div class="tags">
+        <span class="tag hot">Python</span><span class="tag hot">SQL</span><span class="tag">Git</span><span class="tag">Excel</span></div></div>
+      <div class="skill-card reveal"><h3>Data & Analytics</h3><div class="tags">
+        <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">SHAP</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">ETL Pipelines</span><span class="tag">Data Warehousing</span></div></div>
+      <div class="skill-card reveal"><h3>Deployment</h3><div class="tags">
+        <span class="tag">Flask</span><span class="tag">Streamlit</span><span class="tag">OpenCV</span></div></div>
+      <div class="skill-card reveal"><h3>Focus Areas</h3><div class="tags">
+        <span class="tag hot">Healthcare Analytics</span><span class="tag hot">Financial Analytics</span><span class="tag hot">Consulting</span></div></div>
+      <div class="skill-card reveal"><h3>Methods</h3><div class="tags">
+        <span class="tag">Classification</span><span class="tag">Hypothesis Testing</span><span class="tag">Anomaly Detection</span><span class="tag">Feature Engineering</span><span class="tag">Cross-Validation</span><span class="tag">RAG / LLMs</span></div></div>
+      <div class="skill-card reveal"><h3>Domains</h3><div class="tags">
+        <span class="tag">Bioinformatics</span><span class="tag">Computer Vision</span><span class="tag">EDA</span><span class="tag">Data Storytelling</span></div></div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
-<!-- PROJECTS -->
-<div class="container">
-  <section id="projects">
-    <h2>Featured <span>Projects</span></h2>
-    <div class="projects-grid">
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">// selected work</span>
+      <h2>Projects that ship a <em>decision</em>, not just a chart</h2>
+      <p>Every project below is a real dataset, a real question, and a result someone could act on. Full code, data, and write-ups on GitHub.</p>
+    </div>
 
-      <!-- Project 0 — NEW -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">🏥</span>
-            <h3>Hospital Readmissions Risk Analysis</h3>
-          </div>
-          <p class="problem">
-            Analysed 64,764 CMS hospital readmission and mortality records across 4,239 hospitals
-            to identify which conditions, states, and hospitals drive 30-day readmission risk —
-            and whether hospital size or prestige actually predicts performance.
-          </p>
-          <div class="project-result">✦ 15-pt protocol gap (16.3%–31.3% HF) · Excel dashboard · Exec summary PDF</div>
-          <div class="project-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">Excel Dashboard</span>
-            <span class="tag">CMS Data</span>
-            <span class="tag">Healthcare Analytics</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/hospital-readmissions-risk-analysis" target="_blank">
-            View on GitHub →
-          </a>
+    <div class="flagships">
+
+      <div class="flag reveal">
+        <div class="flag-top">
+          <span class="flag-emoji">📈</span>
+          <h3>Mutual Fund Analytics Warehouse</h3>
+          <span class="flag-badge">Flagship</span>
         </div>
-        <span class="featured-badge">Featured</span>
+        <p>An end-to-end analytics warehouse over 100K+ rows of AMFI-style mutual-fund data — a MySQL star schema, a tested Python ETL pipeline, automated data-quality gates, and an Excel dashboard that turns ten raw CSV feeds into board-ready industry metrics.</p>
+        <div class="metrics">
+          <span class="metric">102 automated tests</span>
+          <span class="metric">58 data-quality checks</span>
+          <span class="metric">Direct 0.78% vs Regular 1.35% TER</span>
+        </div>
+        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">Python ETL</span><span class="tag">pytest</span><span class="tag">Excel Dashboard</span><span class="tag">Financial Analytics</span></div>
+        <a class="flag-link" href="https://github.com/akansha0724/mutual-fund-analytics" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
       </div>
 
-      <!-- Project 1 -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">📉</span>
-            <h3>Equity Settlement Risk Analysis</h3>
-          </div>
-          <p class="problem">
-            Analysed 507,521 real SEC settlement failure records to identify where operational
-            risk concentrates, when stress events occur, and how to distinguish chronic failures
-            from event-driven spikes — directly relevant to financial operations roles.
-          </p>
-          <div class="project-result">✦ $147B March stress event · 18% top-10 concentration · 7 SQL queries</div>
-          <div class="project-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">Excel Dashboard</span>
-            <span class="tag">SEC Data</span>
-            <span class="tag">Risk Analytics</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/equity-settlement-risk-analysis" target="_blank">
-            View on GitHub →
-          </a>
+      <div class="flag reveal">
+        <div class="flag-top">
+          <span class="flag-emoji">🩺</span>
+          <h3>30-Day Readmission Risk Model</h3>
+          <span class="flag-badge">Flagship</span>
         </div>
-        <span class="featured-badge">Featured</span>
+        <p>Predicts 30-day hospital readmission on 101,766 real patient encounters — SQL cohort analysis, hypothesis testing, and a risk model that ranks patients before discharge so care teams can intervene where it actually matters.</p>
+        <div class="metrics">
+          <span class="metric">ROC-AUC 0.64</span>
+          <span class="metric">Top 30% captures 48% of readmissions</span>
+          <span class="metric">101,766 encounters</span>
+        </div>
+        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Hypothesis Testing</span><span class="tag">Healthcare</span></div>
+        <a class="flag-link" href="https://github.com/akansha0724/diabetes-readmission-analytics" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
       </div>
 
-      <!-- Project 1b -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">💊</span>
-            <h3>Medical Cost Forecasting</h3>
-          </div>
-          <p class="problem">
-            Forecast 10-year US healthcare spending trajectories across 6 CMS service lines —
-            benchmarking Prophet, ARIMA, and Holt-Winters on a 5-year holdout test to find which
-            model actually wins where, and why.
-          </p>
-          <div class="project-result">✦ No single model dominates · COVID modelled as event shock · Excel dashboard</div>
-          <div class="project-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">Prophet</span>
-            <span class="tag">Time Series</span>
-            <span class="tag">Excel Dashboard</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/medical-cost-forecast" target="_blank">
-            View on GitHub →
-          </a>
+      <div class="flag reveal">
+        <div class="flag-top">
+          <span class="flag-emoji">💬</span>
+          <h3>FundGPT — RAG over Fund Factsheets</h3>
+          <span class="flag-badge">Flagship</span>
         </div>
-        <span class="featured-badge">Featured</span>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">🍄</span>
-            <h3>Fungal Pathogenicity Predictor</h3>
-          </div>
-          <p class="problem">
-            Classify fungal disease risk across 9 pathogen types from ecological trait data —
-            directly applicable to pharma R&D, agricultural risk assessment, and life sciences analytics.
-          </p>
-          <div class="project-result">✦ 92.2% Accuracy · 0.683 Macro F1 · 9 classes</div>
-          <div class="project-tags">
-            <span class="tag">Gradient Boosting</span>
-            <span class="tag">SHAP</span>
-            <span class="tag">sklearn Pipeline</span>
-            <span class="tag">5-Fold CV</span>
-            <span class="tag">Class Imbalance</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/Fungal-Pathogenicity-Predictor" target="_blank">
-            View on GitHub →
-          </a>
+        <p>Ask "which fund has the lowest expense ratio?" and get a cited answer. A retrieval-augmented Q&amp;A engine over 40 factsheets generated from the warehouse above — a zero-cost structured answer engine, with optional Claude synthesis for open-ended questions.</p>
+        <div class="metrics">
+          <span class="metric">100% retrieval hit-rate@1</span>
+          <span class="metric">Comparison tables &amp; rankings</span>
+          <span class="metric">Cited by AMFI code</span>
         </div>
-        <div></div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">🏠</span>
-            <h3>Smart Home Intrusion Detector</h3>
-          </div>
-          <p class="problem">
-            Real-time anomaly detection system for IoT networks — flags abnormal device behaviour
-            without labelled attack data. The same methodology applies to financial fraud detection
-            and healthcare network monitoring.
-          </p>
-          <div class="project-result">✦ Unsupervised · SHAP Explainability · Live Dashboard</div>
-          <div class="project-tags">
-            <span class="tag">Isolation Forest</span>
-            <span class="tag">Streamlit</span>
-            <span class="tag">SHAP</span>
-            <span class="tag">Anomaly Detection</span>
-            <span class="tag">CI/CD</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/SmartHomeIntrusionDetector" target="_blank">
-            View on GitHub →
-          </a>
-        </div>
-        <div></div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">📊</span>
-            <h3>Student Performance Predictor</h3>
-          </div>
-          <p class="problem">
-            ML-powered Flask dashboard that predicts academic outcomes and generates SSI (Student
-            Success Index) scores with personalised improvement recommendations — same pattern as
-            patient risk scoring and customer churn analytics.
-          </p>
-          <div class="project-result">✦ End-to-End · Flask Dashboard · Actionable Insights</div>
-          <div class="project-tags">
-            <span class="tag">Flask</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">Prediction</span>
-            <span class="tag">Recommendations</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/Student-Performance-Predictor" target="_blank">
-            View on GitHub →
-          </a>
-        </div>
-        <div></div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card">
-        <div>
-          <div class="project-header">
-            <span class="project-emoji">🎨</span>
-            <h3>Real-Time Skin Tone Analyser</h3>
-          </div>
-          <p class="problem">
-            Computer vision personalisation engine that detects skin tone from a live webcam feed
-            and generates tailored colour recommendations in real time using OpenCV and colour theory.
-          </p>
-          <div class="project-result">✦ Real-time · 30 FPS · 5 Tone Categories</div>
-          <div class="project-tags">
-            <span class="tag">OpenCV</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Real-time</span>
-            <span class="tag">Personalisation</span>
-          </div>
-          <a class="project-link" href="https://github.com/akansha0724/Skintone-Analysis" target="_blank">
-            View on GitHub →
-          </a>
-        </div>
-        <div></div>
+        <div class="proj-tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">TF-IDF</span><span class="tag">Streamlit</span><span class="tag">GenAI</span></div>
+        <a class="flag-link" href="https://github.com/akansha0724/fundGPT" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
       </div>
 
     </div>
-  </section>
-</div>
+
+    <div class="more-label reveal">More projects</div>
+    <div class="mini-grid">
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">🏥</span><h3>Hospital Readmissions Risk Analysis</h3></div>
+        <p>Analysed 64,764 CMS records across 4,239 hospitals to find which conditions, states, and hospitals drive 30-day readmission risk — and whether size or prestige actually predicts performance.</p>
+        <div class="mini-result">15-pt protocol gap (16.3%–31.3% HF) · Excel dashboard · exec PDF</div>
+        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">CMS Data</span><span class="tag">Healthcare</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/hospital-readmissions-risk-analysis" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">📉</span><h3>Equity Settlement Risk Analysis</h3></div>
+        <p>Analysed 507,521 real SEC settlement-failure records to locate where operational risk concentrates, when stress events hit, and how to tell chronic failures from event-driven spikes.</p>
+        <div class="mini-result">$147B March stress event · 18% top-10 concentration · 7 SQL queries</div>
+        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">SEC Data</span><span class="tag">Risk Analytics</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/equity-settlement-risk-analysis" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">💊</span><h3>Medical Cost Forecasting</h3></div>
+        <p>Forecast 10-year US healthcare spending across 6 CMS service lines — benchmarking Prophet, ARIMA, and Holt-Winters on a 5-year holdout to find which model wins where, and why.</p>
+        <div class="mini-result">No single model dominates · COVID modelled as event shock · Excel dashboard</div>
+        <div class="proj-tags"><span class="tag">Prophet</span><span class="tag">Time Series</span><span class="tag">MySQL</span><span class="tag">Python</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/medical-cost-forecast" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">🍄</span><h3>Fungal Pathogenicity Predictor</h3></div>
+        <p>Classifies fungal disease risk across 9 pathogen types from ecological trait data — applicable to pharma R&amp;D, agricultural risk, and life-sciences analytics.</p>
+        <div class="mini-result">92.2% accuracy · 0.683 macro F1 · 9 classes</div>
+        <div class="proj-tags"><span class="tag">Gradient Boosting</span><span class="tag">SHAP</span><span class="tag">sklearn</span><span class="tag">5-Fold CV</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/Fungal-Pathogenicity-Predictor" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">🏠</span><h3>Smart Home Intrusion Detector</h3></div>
+        <p>Real-time anomaly detection for IoT networks — flags abnormal device behaviour without labelled attack data. Same methodology as financial fraud detection and network monitoring.</p>
+        <div class="mini-result">Unsupervised · SHAP explainability · live dashboard</div>
+        <div class="proj-tags"><span class="tag">Isolation Forest</span><span class="tag">Streamlit</span><span class="tag">SHAP</span><span class="tag">CI/CD</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/SmartHomeIntrusionDetector" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">📊</span><h3>Student Performance Predictor</h3></div>
+        <p>An end-to-end Flask app that predicts academic outcomes and generates a Student Success Index with personalised recommendations — the same pattern as patient risk scoring and churn.</p>
+        <div class="mini-result">End-to-end · Flask dashboard · actionable insights</div>
+        <div class="proj-tags"><span class="tag">Flask</span><span class="tag">scikit-learn</span><span class="tag">Prediction</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/Student-Performance-Predictor" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="mini-card reveal">
+        <div class="mini-top"><span class="em">🎨</span><h3>Real-Time Skin Tone Analyser</h3></div>
+        <p>A computer-vision personalisation engine that detects skin tone from a live webcam feed and generates tailored colour recommendations in real time using OpenCV and colour theory.</p>
+        <div class="mini-result">Real-time · 30 FPS · 5 tone categories</div>
+        <div class="proj-tags"><span class="tag">OpenCV</span><span class="tag">Computer Vision</span><span class="tag">Real-time</span></div>
+        <a class="mini-link" href="https://github.com/akansha0724/Skintone-Analysis" target="_blank" rel="noopener">GitHub <span class="arw">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
-<div class="container">
-  <section id="contact">
-    <h2>Get In <span>Touch</span></h2>
-    <div class="contact-inner">
-      <h3 style="font-size:1.3rem; font-weight:700;">Open to data analyst roles</h3>
-      <p>
-        Finance, healthcare, or consulting — if you're working on something data-driven
-        and need someone who can bridge domain knowledge with analytical rigour, let's talk.
-      </p>
+<section id="contact">
+  <div class="wrap">
+    <div class="inner reveal">
+      <span class="kicker">// let's talk</span>
+      <h2>Open to data analyst <em>roles</em></h2>
+      <p>Finance, healthcare, or consulting — if you're working on something data-driven and want someone who pairs domain curiosity with analytical rigour, let's talk.</p>
       <div class="contact-links">
         <a class="btn btn-primary" href="mailto:akansha0724@gmail.com">akansha0724@gmail.com</a>
-        <a class="btn btn-outline" href="https://linkedin.com/in/akansha-singh0724" target="_blank">LinkedIn</a>
-        <a class="btn btn-outline" href="https://github.com/akansha0724" target="_blank">GitHub</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/akansha-singh0724" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/akansha0724" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
 <footer>
-  <p>Built by Akansha Singh · <a href="https://github.com/akansha0724" style="color:var(--accent)">github.com/akansha0724</a></p>
+  Designed &amp; built from scratch by Akansha Singh · <a href="https://github.com/akansha0724" target="_blank" rel="noopener">github.com/akansha0724</a>
 </footer>
+
+<script>
+  // Scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // Count-up stats
+  function countUp(el){
+    var target = +el.getAttribute('data-count');
+    var suffix = el.getAttribute('data-suffix') || '';
+    var start = null, dur = 1100;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(p < 1) requestAnimationFrame(step); else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  var sio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); sio.unobserve(e.target); } });
+  }, { threshold: .6 });
+  document.querySelectorAll('[data-count]').forEach(function(el){ sio.observe(el); });
+</script>
 
 </body>
 </html>
