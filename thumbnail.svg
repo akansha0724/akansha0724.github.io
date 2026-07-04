@@ -23,7 +23,7 @@
   <text x="100" y="255" font-family="Georgia, 'Fraunces', serif" font-size="72" font-weight="bold" fill="#2b1a22">Akansha Singh</text>
 
   <!-- Role -->
-  <text x="100" y="320" font-family="Georgia, 'Fraunces', serif" font-style="italic" font-size="40" fill="#d6336c">Data Analyst</text>
+  <text x="100" y="320" font-family="Georgia, 'Fraunces', serif" font-style="italic" font-size="40" fill="#d6336c">Data Analytics</text>
 
   <!-- Divider -->
   <rect x="100" y="345" width="90" height="4" fill="#d6336c" rx="2"/>
