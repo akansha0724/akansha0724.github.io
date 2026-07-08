@@ -29,12 +29,12 @@
   <rect x="100" y="345" width="90" height="4" fill="#d6336c" rx="2"/>
 
   <!-- Proof stats -->
-  <rect x="100" y="385" width="150" height="44" rx="10" fill="#ffe1ec"/>
-  <text x="120" y="413" font-family="'Space Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#a61e4d">9 projects</text>
-  <rect x="264" y="385" width="184" height="44" rx="10" fill="#ffe1ec"/>
-  <text x="284" y="413" font-family="'Space Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#a61e4d">770K+ records</text>
-  <rect x="462" y="385" width="140" height="44" rx="10" fill="#ffe1ec"/>
-  <text x="482" y="413" font-family="'Space Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#a61e4d">3 domains</text>
+  <rect x="100" y="385" width="165" height="44" rx="10" fill="#ffe1ec"/>
+  <text x="120" y="413" font-family="'Space Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#a61e4d">10 projects</text>
+  <rect x="279" y="385" width="188" height="44" rx="10" fill="#ffe1ec"/>
+  <text x="299" y="413" font-family="'Space Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#a61e4d">900K+ records</text>
+  <rect x="481" y="385" width="140" height="44" rx="10" fill="#ffe1ec"/>
+  <text x="501" y="413" font-family="'Space Mono', 'Courier New', monospace" font-size="18" font-weight="700" fill="#a61e4d">3 domains</text>
 
   <!-- URL -->
   <text x="100" y="525" font-family="'Space Mono', 'Courier New', monospace" font-size="20" font-weight="700" fill="#d6336c">akansha0724.github.io</text>
