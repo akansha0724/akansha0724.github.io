@@ -300,12 +300,12 @@
     <div class="hero-grid">
       <div>
         <span class="status"><span class="pulse"></span> Open to data analyst roles</span>
-        <div class="kicker">Finance · Healthcare · Consulting analytics</div>
+        <div class="kicker">Healthcare · Finance · Consulting analytics</div>
         <h1>Hi, I'm <span class="accent">Akansha Singh</span></h1>
         <p class="hero-lead">
           A final-year student with a biotech mind and an analyst's toolkit — I
           turn messy, real-world data into decisions people can act on. Ten shipped
-          projects, from warehouses and risk models to a fraud-detection audit engine.
+          projects, from healthcare claims and hospital outcomes to warehouses and risk models.
         </p>
         <div class="hero-btns">
           <a class="btn btn-primary" href="#work">View my work</a>
@@ -363,11 +363,11 @@
       </div>
       <div class="facts reveal">
         <div class="fact"><span class="fl">Education</span><span class="fv">B.Tech Biotechnology · Amity University · CGPA 8.49</span></div>
-        <div class="fact"><span class="fl">Currently</span><span class="fv">Research Intern · IIT (ISM) Dhanbad · SRIS 2026</span></div>
-        <div class="fact"><span class="fl">Experience</span><span class="fv">Data Analyst Intern · Bluestock™ · Jun 2026</span></div>
+        <div class="fact"><span class="fl">Summer Research</span><span class="fv">Research Intern · IIT (ISM) Dhanbad · SRIS 2026 · May–Jul 2026</span></div>
+        <div class="fact"><span class="fl">Experience</span><span class="fv">Data Analyst Intern · Bluestock™ · Apr–Jun 2026</span></div>
         <div class="fact"><span class="fl">Research</span><span class="fv">Systems Biology & Data Analytics Lab · Amity Institute of Biotechnology · 2+ years</span></div>
         <div class="fact"><span class="fl">Training</span><span class="fv">CSIR-CIMFR · Air-pollution-tolerant microbes from coal-mining areas · Python analysis · Jul 2026</span></div>
-        <div class="fact"><span class="fl">Leadership</span><span class="fv">Joint Secretary · Innovation & Entrepreneurship Cell, AIB</span></div>
+        <div class="fact"><span class="fl">Leadership</span><span class="fv">Vice President · Innovation &amp; Entrepreneurship Cell, AIB · Placement Coordinator · Corporate Resource Centre</span></div>
       </div>
     </div>
     <div class="wins">
@@ -415,6 +415,38 @@
 
       <div class="flag reveal">
         <div class="flag-top">
+          <span class="flag-emoji">🔍</span>
+          <h3>Healthcare Claims FWA — Payer Audit Prioritization</h3>
+          <span class="flag-badge">Flagship</span>
+        </div>
+        <p>Ranks 200+ NY hospitals by billing-outlier risk across 111,155 real claims lines and screens the provider network against the 83,464-entry federal exclusion list — the payment-integrity workflow at Optum, a Blue plan, or CMS. Two independent detectors (peer-benchmark markup + Isolation Forest) have to agree before a facility hits the priority audit queue, cutting false positives.</p>
+        <div class="metrics">
+          <span class="metric">6 of 200 flagged by both detectors</span>
+          <span class="metric">111K billing lines · 204 hospitals</span>
+          <span class="metric">83K-provider exclusion screen</span>
+        </div>
+        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">scikit-learn</span><span class="tag">Isolation Forest</span><span class="tag">Robust Statistics</span><span class="tag">Healthcare</span></div>
+        <a class="flag-link" href="https://github.com/akansha0724/healthcare-claims-fwa" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="flag reveal">
+        <div class="flag-top">
+          <span class="flag-emoji">🩺</span>
+          <h3>30-Day Readmission Risk Model</h3>
+          <span class="flag-badge">Flagship</span>
+        </div>
+        <p>Predicts 30-day hospital readmission on 101,766 real patient encounters — SQL cohort analysis, hypothesis testing, and a risk model that ranks patients before discharge so care teams can intervene where it actually matters.</p>
+        <div class="metrics">
+          <span class="metric">ROC-AUC 0.64</span>
+          <span class="metric">Top 30% captures 48% of readmissions</span>
+          <span class="metric">101,766 encounters</span>
+        </div>
+        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Hypothesis Testing</span><span class="tag">Healthcare</span></div>
+        <a class="flag-link" href="https://github.com/akansha0724/diabetes-readmission-analytics" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
+      </div>
+
+      <div class="flag reveal">
+        <div class="flag-top">
           <span class="flag-emoji">📈</span>
           <h3>Mutual Fund Analytics Warehouse</h3>
           <span class="flag-badge">Flagship</span>
@@ -447,22 +479,6 @@
 
       <div class="flag reveal">
         <div class="flag-top">
-          <span class="flag-emoji">🩺</span>
-          <h3>30-Day Readmission Risk Model</h3>
-          <span class="flag-badge">Flagship</span>
-        </div>
-        <p>Predicts 30-day hospital readmission on 101,766 real patient encounters — SQL cohort analysis, hypothesis testing, and a risk model that ranks patients before discharge so care teams can intervene where it actually matters.</p>
-        <div class="metrics">
-          <span class="metric">ROC-AUC 0.64</span>
-          <span class="metric">Top 30% captures 48% of readmissions</span>
-          <span class="metric">101,766 encounters</span>
-        </div>
-        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Hypothesis Testing</span><span class="tag">Healthcare</span></div>
-        <a class="flag-link" href="https://github.com/akansha0724/diabetes-readmission-analytics" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
-      </div>
-
-      <div class="flag reveal">
-        <div class="flag-top">
           <span class="flag-emoji">💬</span>
           <h3>FundGPT — RAG over Fund Factsheets</h3>
           <span class="flag-badge">Flagship</span>
@@ -475,22 +491,6 @@
         </div>
         <div class="proj-tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">TF-IDF</span><span class="tag">Streamlit</span><span class="tag">GenAI</span></div>
         <a class="flag-link" href="https://github.com/akansha0724/fundGPT" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
-      </div>
-
-      <div class="flag reveal">
-        <div class="flag-top">
-          <span class="flag-emoji">🔍</span>
-          <h3>Healthcare Claims FWA — Payer Audit Prioritization</h3>
-          <span class="flag-badge">Flagship</span>
-        </div>
-        <p>Ranks 200+ NY hospitals by billing-outlier risk across 111,155 real claims lines and screens the provider network against the 83,464-entry federal exclusion list — the payment-integrity workflow at Optum, a Blue plan, or CMS. Two independent detectors (peer-benchmark markup + Isolation Forest) have to agree before a facility hits the priority audit queue, cutting false positives.</p>
-        <div class="metrics">
-          <span class="metric">6 of 200 flagged by both detectors</span>
-          <span class="metric">111K billing lines · 204 hospitals</span>
-          <span class="metric">83K-provider exclusion screen</span>
-        </div>
-        <div class="proj-tags"><span class="tag">MySQL</span><span class="tag">scikit-learn</span><span class="tag">Isolation Forest</span><span class="tag">Robust Statistics</span><span class="tag">Healthcare</span></div>
-        <a class="flag-link" href="https://github.com/akansha0724/healthcare-claims-fwa" target="_blank" rel="noopener">View on GitHub <span class="arw">→</span></a>
       </div>
 
     </div>
